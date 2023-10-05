@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+
+    <style>
+        body
+{
+    animation: rainbow 5s ease-in infinite;
+        color: #ffffff;
+}
+#f1
+{
+    float: left;
+}
+#wynik
+{
+    
+    display: inline-block;
+    color: white;
+}
+#table1
+{
+    background-color: red;
+}
+
+#id1
+{
+    text-align: center;
+    font-size: 100px;
+    background-color: purple;
+    margin: 0 auto;
+    margin-top: 350px;
+    max-width: 500px;
+
+    
+}
+
+@keyframes rainbow {
+    0% {background-color: #FF0000;}
+    10% {background-color: #E2571E;}
+    20% {background-color: #FF7F00;}
+    30% {background-color: #FFFF00;}
+    40% {background-color: #00FF00;}
+    50% {background-color: #96bf33;}
+    60% {background-color: #0000FF;}
+    70% {background-color: #4B0082;}
+    80% {background-color: #8B00FF;}
+    90% {background-color: #222222;}
+    100% {background-color: #FF0000;}
+    }
+
+    </style>
+    <script>
+        
+        function oblicz()
+        {
+            
+            let a=document.getElementById('l1').value;
+            let b=document.getElementById('s1').value;
+            let c=document.getElementById('l2').value;
+
+            a=Number(a);
+            c=Number(c);
+
+            if(b=="w1") document.getElementById("wynik").innerHTML=a+c;
+            if(b=="w2") document.getElementById("wynik").innerHTML=a-c;
+            if(b=="w3") document.getElementById("wynik").innerHTML=a/c;
+            if(b=="w4") document.getElementById("wynik").innerHTML=a*c;
+
+
+        }
+        
+    </script>
+</head>
+<body>
+
+ <div id="id1">
+
+<form>
+    <input type="number" id="l1" autofocus>
+    <select id="s1">
+        <option value="w1">+</option>
+        <option value="w2">-</option>
+        <option value="w3">/</option>
+        <option value="w4">*</option>
+    </select>  
+    
+    <table id="table1">
+    <input type="number" id="l2">
+    <input type="button" value="enter" onclick="oblicz()">
+    </table>
+
+</form>
+
+<div id="wynik">wynik</div>
+
+</div>
+
+
+
+</body>
+</html>
